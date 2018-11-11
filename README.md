@@ -63,3 +63,9 @@ Author Information
 ------------------
 
 Created with love by [Brian Hartsock](http://blog.brianhartsock.com).
+
+Helpful Links
+-------------
+
+- [Avahi Service Details](https://linux.die.net/man/5/avahi.service)
+- [mDNS/Bonjour Bible](https://jonathanmumm.com/tech-it/mdns-bonjour-bible-common-service-strings-for-various-vendors/)

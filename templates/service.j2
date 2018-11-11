@@ -1,0 +1,27 @@
+<?xml version="1.0" standalone='no'?><!--*-nxml-*-->
+<!DOCTYPE service-group SYSTEM "avahi-service.dtd">
+<service-group>
+  <name replace-wildcards="{{ 'yes' if avahi_replace_wildcards else 'no' }}">{{ avahi_network_name }}</name>
+  {% for service in avahi_service_services -%}
+    <service protocol="{{ service.protocol | default('any') }}">
+      <type>{{ service.type }}</type>
+      <port><{{ service.port }}</port>
+      {% if 'domain_name' in service -%}
+        <domain-name>{{ service.domain_name is defined }}</domain-name>
+      {% endif -%}
+      {% if 'host_name' in service -%}
+        <host-name>{{ service.host_name }}</host-name>
+      {% endif -%}
+      {% if 'txt_records' in service -%}
+        {% for record in service.txt_records -%}
+          <txt-record>{{ record }}</txt-record>
+        {% endfor -%}
+      {% endif -%}
+      {% if 'sub_types' in service -%}
+        {% for sub_type in service.sub_types -%}
+          <subtype>{{ sub_type }}</subtype>
+        {% endfor -%}
+      {% endif -%}
+    </service>
+  {% endfor -%}
+</service-group>

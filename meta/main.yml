@@ -1,0 +1,17 @@
+galaxy_info:
+  author: Brian Hartsock
+  description: Ansible role for installing and configuring Avahi.
+  license: MIT
+
+  min_ansible_version: 2.4
+
+  platforms:
+  - name: Ubuntu
+    versions:
+    - xenial
+
+  galaxy_tags:
+    - ubuntu
+    - avahi
+
+dependencies: []

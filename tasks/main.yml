@@ -1,0 +1,23 @@
+---
+- name: Include OS-specific variables.
+  include_vars: "{{ ansible_os_family }}.yml"
+- name: Install Avahi package ({{ item }})
+  package:
+    name: '{{ item }}'
+  with_items: '{{ avahi_packages }}'
+- name: Install Avahi service definitions
+  template:
+    src: service.j2
+    dest: /etc/avahi/services/{{ item.name }}.service
+    owner: root
+    group: root
+    mode: 0644
+  vars:
+    avahi_service_services: '{{ item.services }}'
+  with_items: '{{ avahi_services }}'
+  notify:
+    - restart avahi
+- name: Ensure service is running
+  service:
+    name: avahi-daemon
+    state: started

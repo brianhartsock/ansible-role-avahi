@@ -1,0 +1,3 @@
+---
+avahi_packages:
+  - avahi-daemon

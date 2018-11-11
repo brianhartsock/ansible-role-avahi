@@ -1,0 +1,4 @@
+---
+avahi_services: []
+avahi_replace_wildcards: yes
+avahi_network_name: '%h'

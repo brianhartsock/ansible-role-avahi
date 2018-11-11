@@ -1,8 +1,9 @@
 galaxy_info:
+  role_name: avahi
   author: Brian Hartsock
   description: Ansible role for installing and configuring Avahi.
   license: MIT
-
+  
   min_ansible_version: 2.4
 
   platforms:

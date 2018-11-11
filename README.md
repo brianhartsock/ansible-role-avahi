@@ -1,6 +1,8 @@
 ansible.avahi
 =========
 
+[![Build Status](https://travis-ci.org/brianhartsock/ansible-role-avahi.svg?branch=master)](https://travis-ci.org/brianhartsock/ansible-role-avahi)
+
 Ansible role to install and configure [Avahi](https://www.avahi.org). Avahi enables discoverable services in a network, specifically mirroring Apple Bonjour behavior allow Mac's to discover services in a Linux machine.
 
 Requirements

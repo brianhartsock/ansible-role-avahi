@@ -17,7 +17,10 @@ script:
   - ${PWD}/tests/test.sh
 
   # Run ZSH command to make sure it installed.
-  - avahi-daemon -c
+  - docker exec --tty ${container_id} avahi-daemon -c
+
+  # Remove the docker container
+  - docker rm -f ${container_id}
 
 notifications:
   webhooks: https://galaxy.ansible.com/api/v1/notifications/

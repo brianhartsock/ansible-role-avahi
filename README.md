@@ -15,7 +15,7 @@ The role will need `sudo` privileges so it should be run with `become: True` or 
 Role Variables
 --------------
 
-The following variables are defined in `defaults/main.yml` and are meant to be used to further configure Avahi services. `avahi_services` is the most important variable which defines which services are advertised over mDNS.
+The following variables are defined in `defaults/main.yml` and can be used to further configure Avahi services. `avahi_services` is the most important variable which defines which services are advertised over mDNS.
 
 ```yaml
 # List of service definitions.

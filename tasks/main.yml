@@ -5,6 +5,15 @@
   package:
     name: '{{ item }}'
   with_items: '{{ avahi_packages }}'
+- name: Configure Avahi
+  template:
+    src: avahi-daemon.conf.j2
+    dest: /etc/avahi/avahi-daemon.conf
+    owner: root
+    group: root
+    mode: 0644
+  notify:
+    - restart avahi
 - name: Install Avahi service definitions
   template:
     src: service.j2

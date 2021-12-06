@@ -5,7 +5,7 @@
   {% for service in avahi_service_services -%}
     <service protocol="{{ service.protocol | default('any') }}">
       <type>{{ service.type }}</type>
-      <port><{{ service.port }}</port>
+      <port>{{ service.port }}</port>
       {% if 'domain_name' in service -%}
         <domain-name>{{ service.domain_name is defined }}</domain-name>
       {% endif -%}

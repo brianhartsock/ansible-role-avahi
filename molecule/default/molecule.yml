@@ -1,0 +1,56 @@
+---
+dependency:
+  name: galaxy
+driver:
+  name: docker
+lint: |
+  set -e
+  yamllint .
+  ansible-lint
+  flake8
+platforms:
+  - name: focal
+    image: ubuntu:20.04  
+provisioner:
+  name: ansible
+verifier:
+  name: testinfra
+scenario:
+  name: default
+  create_sequence:
+    #- dependency
+    - create
+    #- prepare
+  check_sequence:
+    #- dependency
+    #- cleanup
+    - destroy
+    - create
+    #- prepare
+    - converge
+    - check
+    - destroy
+  converge_sequence:
+    #- dependency
+    - create
+    #- prepare
+    - converge
+  destroy_sequence:
+    #- dependency
+    #- cleanup
+    - destroy
+  test_sequence:
+    #- dependency
+    - lint
+    #- cleanup
+    - destroy
+    - syntax
+    - create
+    #- prepare
+    - converge
+    # Service commands fail hard in docker unfortunately.
+    #- idempotence
+    #- side_effect
+    - verify
+    #- cleanup
+    - destroy

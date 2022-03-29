@@ -62,6 +62,8 @@ cryptography==36.0.1
     #   paramiko
 distlib==0.3.4
     # via virtualenv
+distro==1.7.0
+    # via selinux
 docker==5.0.3
     # via molecule-docker
 enrich==1.2.7
@@ -108,7 +110,7 @@ packaging==21.3
     #   ansible-lint
     #   molecule
     #   pytest
-paramiko==2.9.2
+paramiko==2.10.1
     # via molecule
 pathspec==0.9.0
     # via yamllint
@@ -193,14 +195,19 @@ rich==11.1.0
     #   ansible-lint
     #   enrich
     #   molecule
-ruamel.yaml==0.17.20
+ruamel-yaml==0.17.20
     # via ansible-lint
-ruamel.yaml.clib==0.2.6
-    # via ruamel.yaml
+ruamel-yaml-clib==0.2.6
+    # via ruamel-yaml
+selinux==0.2.1
+    # via
+    #   molecule
+    #   molecule-docker
 six==1.16.0
     # via
     #   bcrypt
     #   cookiecutter
+    #   paramiko
     #   python-dateutil
     #   virtualenv
 subprocess-tee==0.3.5

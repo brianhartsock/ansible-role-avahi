@@ -28,7 +28,7 @@ bracex==2.2.1
     # via wcmatch
 cerberus==1.3.2
     # via molecule
-certifi==2021.10.8
+certifi==2022.12.7
     # via requests
 cffi==1.15.0
     # via
@@ -196,8 +196,6 @@ rich==11.1.0
     #   molecule
 ruamel-yaml==0.17.20
     # via ansible-lint
-ruamel-yaml-clib==0.2.6
-    # via ruamel-yaml
 selinux==0.2.1
     # via
     #   molecule

@@ -4,3 +4,4 @@ avahi_replace_wildcards: yes
 avahi_network_name: '%h'
 avahi_use_ipv6: 'no'
 avahi_allow_interfaces: "{{ ansible_default_ipv4.interface }}"
+avahi_enable_reflector: 'no'

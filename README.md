@@ -39,6 +39,12 @@ avahi_replace_wildcards: yes
 avahi_network_name: '%h'
 ```
 
+Reflector mode
+--------------
+```yaml
+avahi_enable_reflector: 'yes'
+```
+
 Dependencies
 ------------
 

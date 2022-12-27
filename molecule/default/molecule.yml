@@ -10,7 +10,7 @@ lint: |
   flake8
 platforms:
   - name: focal
-    image: ubuntu:20.04  
+    image: ubuntu:20.04
 provisioner:
   name: ansible
 verifier:

@@ -8,7 +8,7 @@ Ansible role to install and configure [Avahi](https://www.avahi.org). Avahi enab
 Requirements
 ------------
 
-This role has been tested on Ubuntu 16.04 and should work on most modern Debian installations.
+This role has been tested on Ubuntu 20.04 and should work on most modern Debian installations.
 
 The role will need `sudo` privileges so it should be run with `become: True` or a user with sufficient default privileges to install and configure packages.
 
@@ -37,12 +37,16 @@ avahi_replace_wildcards: yes
 
 # Network name to be advertised
 avahi_network_name: '%h'
-```
 
-Reflector mode
---------------
-```yaml
+# Enable or disable IPv6
+avahi_use_ipv6: 'no'
+
+# Set which interfaces to run on
+avahi_allow_interfaces: "{{ ansible_default_ipv4.interface }}"
+
+# Enable or disable reflector mode
 avahi_enable_reflector: 'yes'
+
 ```
 
 Dependencies

@@ -6,13 +6,13 @@
 #
 ansi2html==1.7.0
     # via molecule
-ansible==5.3.0
+ansible==7.0.0
     # via -r requirements.in
 ansible-compat==1.0.0
     # via
     #   molecule
     #   molecule-docker
-ansible-core==2.12.2
+ansible-core==2.14.1
     # via ansible
 ansible-lint==5.3.2
     # via -r requirements.in

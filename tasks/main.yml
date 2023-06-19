@@ -13,7 +13,7 @@
     group: root
     mode: 0644
   notify:
-    - restart avahi
+    - Restart Avahi
 - name: Install Avahi service definitions
   ansible.builtin.template:
     src: service.j2
@@ -25,7 +25,7 @@
     avahi_service_services: '{{ item.services }}'
   with_items: '{{ avahi_services }}'
   notify:
-    - restart avahi
+    - Restart Avahi
 - name: Ensure service is running
   ansible.builtin.service:
     name: avahi-daemon

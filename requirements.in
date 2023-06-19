@@ -1,3 +1,4 @@
-molecule[docker,lint,test]
+molecule
+molecule-plugins[docker]
 ansible
 ansible-lint

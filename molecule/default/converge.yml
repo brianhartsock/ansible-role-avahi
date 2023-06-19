@@ -3,7 +3,7 @@
   hosts: all
   pre_tasks:
     - name: Update apt cache.
-      package:
+      ansible.builtin.package:
         update_cache: true
   roles:
     - role: brianhartsock.avahi

@@ -1,12 +1,12 @@
 ---
 - name: Include OS-specific variables.
-  include_vars: "{{ ansible_os_family }}.yml"
+  ansible.builtin.include_vars: "{{ ansible_os_family }}.yml"
 - name: Install Avahi package ({{ item }})
-  package:
+  ansible.builtin.package:
     name: '{{ item }}'
   with_items: '{{ avahi_packages }}'
 - name: Configure Avahi
-  template:
+  ansible.builtin.template:
     src: avahi-daemon.conf.j2
     dest: /etc/avahi/avahi-daemon.conf
     owner: root
@@ -15,7 +15,7 @@
   notify:
     - restart avahi
 - name: Install Avahi service definitions
-  template:
+  ansible.builtin.template:
     src: service.j2
     dest: /etc/avahi/services/{{ item.name }}.service
     owner: root
@@ -27,6 +27,6 @@
   notify:
     - restart avahi
 - name: Ensure service is running
-  service:
+  ansible.builtin.service:
     name: avahi-daemon
     state: started

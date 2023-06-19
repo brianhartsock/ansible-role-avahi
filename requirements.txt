@@ -50,10 +50,14 @@ docker==6.1.3
     # via molecule-plugins
 enrich==1.2.7
     # via molecule
+exceptiongroup==1.1.1
+    # via pytest
 filelock==3.12.2
     # via ansible-lint
 idna==3.4
     # via requests
+iniconfig==2.0.0
+    # via pytest
 jinja2==3.1.2
     # via
     #   ansible-core
@@ -89,6 +93,7 @@ packaging==23.1
     #   black
     #   docker
     #   molecule
+    #   pytest
 pathspec==0.11.1
     # via
     #   ansible-lint
@@ -97,13 +102,19 @@ pathspec==0.11.1
 platformdirs==3.6.0
     # via black
 pluggy==1.0.0
-    # via molecule
+    # via
+    #   molecule
+    #   pytest
 pycparser==2.21
     # via cffi
 pygments==2.15.1
     # via rich
 pyrsistent==0.19.3
     # via jsonschema
+pytest==7.3.2
+    # via pytest-testinfra
+pytest-testinfra==8.1.0
+    # via -r requirements.in
 python-dateutil==2.8.2
     # via arrow
 python-slugify==8.0.1
@@ -141,7 +152,9 @@ subprocess-tee==0.4.1
 text-unidecode==1.3
     # via python-slugify
 tomli==2.0.1
-    # via black
+    # via
+    #   black
+    #   pytest
 urllib3==2.0.3
     # via
     #   docker

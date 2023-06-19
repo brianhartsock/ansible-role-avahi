@@ -5,7 +5,7 @@ galaxy_info:
   description: Ansible role for installing and configuring Avahi.
   license: MIT
   
-  min_ansible_version: 2.4
+  min_ansible_version: "2.4"
 
   platforms:
     - name: Ubuntu

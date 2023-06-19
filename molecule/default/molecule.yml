@@ -3,11 +3,6 @@ dependency:
   name: galaxy
 driver:
   name: docker
-lint: |
-  set -e
-  yamllint .
-  ansible-lint
-  flake8
 platforms:
   - name: focal
     image: ubuntu:20.04
@@ -41,7 +36,6 @@ scenario:
     - destroy
   test_sequence:
     #- dependency
-    - lint
     #- cleanup
     - destroy
     - syntax

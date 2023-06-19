@@ -11,9 +11,9 @@ defaults:
     working-directory: 'brianhartsock.avahi'
 
 jobs:
-  molecule:
-    name: Molecule
-    runs-on: ubuntu-20.04
+  lint:
+    name: Lint
+    runs-on: ubuntu-latest
     steps:
       - name: Check out the codebase.
         uses: actions/checkout@v2
@@ -24,6 +24,31 @@ jobs:
         uses: actions/setup-python@v2
         with:
           python-version: '3.x'
+          cache: 'pip'
+
+      - name: Install dependencies.
+        run: pip3 install -r requirements.txt
+
+      - name: Ansible Lint
+        run: ansible-lint
+
+      - name: YAML Lint
+        run: yamllint .
+
+  molecule:
+    name: Molecule
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out the codebase.
+        uses: actions/checkout@v2
+        with:
+          path: 'brianhartsock.avahi'
+
+      - name: Set up Python 3.
+        uses: actions/setup-python@v2
+        with:
+          python-version: '3.x'
+          cache: 'pip'
 
       - name: Install dependencies.
         run: pip3 install -r requirements.txt

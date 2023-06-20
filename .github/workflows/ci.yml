@@ -29,11 +29,14 @@ jobs:
       - name: Install dependencies.
         run: pip3 install -r requirements.txt
 
-      - name: Ansible Lint
+      - name: Ansible lint
         run: ansible-lint
 
-      - name: YAML Lint
+      - name: YAML lint
         run: yamllint .
+
+      - name: Python lint
+        run: flake8
 
   molecule:
     name: Molecule

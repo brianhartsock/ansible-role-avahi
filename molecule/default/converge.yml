@@ -5,5 +5,9 @@
     - name: Update apt cache.
       ansible.builtin.package:
         update_cache: true
+  vars:
+    # The Docker image we are using for molecule doesn't have d-bus or systemd.
+    # We need to turn off dbus just for testing.
+    - avahi_enable_dbus: 'no'
   roles:
     - role: brianhartsock.avahi

@@ -45,6 +45,9 @@ avahi_allow_interfaces: "{{ ansible_default_ipv4.interface }}"
 # Enable or disable reflector mode
 avahi_enable_reflector: 'yes'
 
+# Support for systems not usingn dbus/systemd
+avahi_enable_dbus: 'yes'
+
 ```
 
 Dependencies

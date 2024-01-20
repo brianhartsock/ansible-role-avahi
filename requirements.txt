@@ -4,25 +4,25 @@
 #
 #    pip-compile
 #
-ansible==9.0.1
+ansible==9.1.0
     # via -r requirements.in
-ansible-compat==4.1.10
+ansible-compat==4.1.11
     # via
     #   ansible-lint
     #   molecule
-ansible-core==2.16.0
+ansible-core==2.16.2
     # via
     #   ansible
     #   ansible-compat
     #   ansible-lint
     #   molecule
-ansible-lint==6.22.1
+ansible-lint==6.22.2
     # via -r requirements.in
-attrs==23.1.0
+attrs==23.2.0
     # via
     #   jsonschema
     #   referencing
-black==23.11.0
+black==23.12.1
     # via ansible-lint
 bracex==2.4
     # via wcmatch
@@ -41,7 +41,7 @@ click-help-colors==0.9.4
     # via molecule
 cryptography==41.0.7
     # via ansible-core
-docker==6.1.3
+docker==7.0.0
     # via molecule-plugins
 enrich==1.2.7
     # via molecule
@@ -49,32 +49,32 @@ exceptiongroup==1.2.0
     # via pytest
 filelock==3.13.1
     # via ansible-lint
-flake8==6.1.0
+flake8==7.0.0
     # via -r requirements.in
 idna==3.6
     # via requests
 iniconfig==2.0.0
     # via pytest
-jinja2==3.1.2
+jinja2==3.1.3
     # via
     #   ansible-core
     #   molecule
-jsonschema==4.20.0
+jsonschema==4.21.1
     # via
     #   ansible-compat
     #   ansible-lint
     #   molecule
-jsonschema-specifications==2023.11.1
+jsonschema-specifications==2023.12.1
     # via jsonschema
 markdown-it-py==3.0.0
     # via rich
-markupsafe==2.1.3
+markupsafe==2.1.4
     # via jinja2
 mccabe==0.7.0
     # via flake8
 mdurl==0.1.2
     # via markdown-it-py
-molecule==6.0.2
+molecule==6.0.3
     # via
     #   -r requirements.in
     #   molecule-plugins
@@ -91,12 +91,12 @@ packaging==23.2
     #   docker
     #   molecule
     #   pytest
-pathspec==0.11.2
+pathspec==0.12.1
     # via
     #   ansible-lint
     #   black
     #   yamllint
-platformdirs==4.0.0
+platformdirs==4.1.0
     # via black
 pluggy==1.3.0
     # via
@@ -106,11 +106,11 @@ pycodestyle==2.11.1
     # via flake8
 pycparser==2.21
     # via cffi
-pyflakes==3.1.0
+pyflakes==3.2.0
     # via flake8
 pygments==2.17.2
     # via rich
-pytest==7.4.3
+pytest==7.4.4
     # via pytest-testinfra
 pytest-testinfra==10.0.0
     # via -r requirements.in
@@ -121,13 +121,12 @@ pyyaml==6.0.1
     #   ansible-lint
     #   molecule
     #   yamllint
-referencing==0.31.0
+referencing==0.32.1
     # via
     #   jsonschema
     #   jsonschema-specifications
 requests==2.31.0
     # via
-    #   ansible-lint
     #   docker
     #   molecule-plugins
 resolvelib==1.0.1
@@ -137,7 +136,7 @@ rich==13.7.0
     #   ansible-lint
     #   enrich
     #   molecule
-rpds-py==0.13.1
+rpds-py==0.17.1
     # via
     #   jsonschema
     #   referencing
@@ -153,7 +152,7 @@ tomli==2.0.1
     # via
     #   black
     #   pytest
-typing-extensions==4.8.0
+typing-extensions==4.9.0
     # via black
 urllib3==2.1.0
     # via
@@ -163,7 +162,5 @@ wcmatch==8.5
     # via
     #   ansible-lint
     #   molecule
-websocket-client==1.6.4
-    # via docker
 yamllint==1.33.0
     # via ansible-lint

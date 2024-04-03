@@ -6,6 +6,8 @@ driver:
 platforms:
   - name: focal
     image: ubuntu:20.04
+  - name: jammy
+    image: ubuntu:22.04
 provisioner:
   name: ansible
 verifier:

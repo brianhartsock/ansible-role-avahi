@@ -8,6 +8,8 @@ platforms:
     image: ubuntu:20.04
   - name: jammy
     image: ubuntu:22.04
+  - name: noble
+    image: ubuntu:24.04
 provisioner:
   name: ansible
 verifier:

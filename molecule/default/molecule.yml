@@ -5,9 +5,29 @@ driver:
   name: docker
 platforms:
   - name: focal
-    image: ubuntu:20.04
+    image: geerlingguy/docker-ubuntu2004-ansible:latest
+    command: ""
+    privileged: true
+    volumes:
+      - /sys/fs/cgroup:/sys/fs/cgroup:rw
+    cgroupns_mode: host
+    pre_build_image: true
   - name: jammy
-    image: ubuntu:22.04
+    image: geerlingguy/docker-ubuntu2204-ansible:latest
+    command: ""
+    privileged: true
+    volumes:
+      - /sys/fs/cgroup:/sys/fs/cgroup:rw
+    cgroupns_mode: host
+    pre_build_image: true
+  - name: noble
+    image: geerlingguy/docker-ubuntu2004-ansible:latest
+    command: ""
+    privileged: true
+    volumes:
+      - /sys/fs/cgroup:/sys/fs/cgroup:rw
+    cgroupns_mode: host
+    pre_build_image: true
 provisioner:
   name: ansible
 verifier:

@@ -21,7 +21,7 @@ platforms:
     cgroupns_mode: host
     pre_build_image: true
   - name: noble
-    image: geerlingguy/docker-ubuntu2004-ansible:latest
+    image: geerlingguy/docker-ubuntu2404-ansible:latest
     command: ""
     privileged: true
     volumes:

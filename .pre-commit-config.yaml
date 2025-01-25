@@ -1,0 +1,18 @@
+repos:
+  - repo: local
+    hooks:
+      - id: yaml-lint
+        name: Run YAML lint
+        entry: yamllint
+        language: system
+        types: [yaml]
+      - id: ansible-lint
+        name: Ansible Lint
+        entry: ansible-lint
+        language: system
+        types: [yaml]
+      - id: flake8-lint
+        name: Run Python lint (Flake8)
+        entry: flake8
+        language: system
+        types: [python]

@@ -30,3 +30,4 @@
   ansible.builtin.service:
     name: avahi-daemon
     state: started
+  when: not ansible_check_mode

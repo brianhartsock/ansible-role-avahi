@@ -4,3 +4,4 @@ pytest-testinfra
 ansible
 ansible-lint
 flake8
+pre-commit

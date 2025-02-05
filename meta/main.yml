@@ -1,18 +1,19 @@
+---
 galaxy_info:
   role_name: avahi
   namespace: brianhartsock
   author: Brian Hartsock
   description: Ansible role for installing and configuring Avahi.
   license: MIT
-  
+
   min_ansible_version: "2.4"
 
   platforms:
     - name: Ubuntu
       versions:
-      - focal
-      - jammy
-      - noble
+        - focal
+        - jammy
+        - noble
 
   galaxy_tags:
     - ubuntu

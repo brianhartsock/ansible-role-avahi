@@ -3,3 +3,4 @@
   ansible.builtin.service:
     name: avahi-daemon
     state: restarted
+  when: 'not ansible_check_mode'

@@ -1,0 +1,41 @@
+---
+dependency:
+  name: galaxy
+driver:
+  name: docker
+lint: |
+  set -e
+  yamllint .
+  ansible-lint
+  flake8
+platforms:
+  # Only worry about noble for check mode since there is no difference in playbooks
+  - name: noble
+    image: geerlingguy/docker-ubuntu2404-ansible:latest
+    command: ""
+    privileged: true
+    volumes:
+      - /sys/fs/cgroup:/sys/fs/cgroup:rw
+    cgroupns_mode: host
+    pre_build_image: true
+provisioner:
+  name: ansible
+  options:
+    check: true
+verifier:
+  name: testinfra
+scenario:
+  test_sequence:
+    - dependency
+    - cleanup
+    - destroy
+    - syntax
+    - create
+    - prepare
+    - converge
+    # Skipping idempotence since it is check_mode
+    # idempotence
+    - side_effect
+    - verify
+    - cleanup
+    - destroy

@@ -61,3 +61,9 @@ jobs:
         env:
           PY_COLORS: '1'
           ANSIBLE_FORCE_COLOR: '1'
+
+      - name: Run Molecule tests (check_mode)
+        run: molecule test -s check_mode
+        env:
+          PY_COLORS: '1'
+          ANSIBLE_FORCE_COLOR: '1'

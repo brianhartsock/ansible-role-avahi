@@ -3,11 +3,6 @@ dependency:
   name: galaxy
 driver:
   name: docker
-lint: |
-  set -e
-  yamllint .
-  ansible-lint
-  flake8
 platforms:
   # Only worry about noble for check mode since there is no difference in playbooks
   - name: noble

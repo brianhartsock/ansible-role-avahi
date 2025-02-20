@@ -41,10 +41,12 @@ click==8.1.8
     #   molecule
 click-help-colors==0.9.4
     # via molecule
-cryptography==44.0.0
+cryptography==44.0.1
     # via ansible-core
 distlib==0.3.9
     # via virtualenv
+distro==1.9.0
+    # via selinux
 docker==7.1.0
     # via molecule-plugins
 enrich==1.2.7
@@ -157,6 +159,8 @@ ruamel-yaml==0.18.10
     # via ansible-lint
 ruamel-yaml-clib==0.2.12
     # via ruamel-yaml
+selinux==0.3.0
+    # via molecule-plugins
 subprocess-tee==0.4.2
     # via
     #   ansible-compat

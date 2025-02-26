@@ -1,12 +1,13 @@
-ansible.avahi
+Ansible Role: avahi
 =========
+[![CI](https://github.com/brianhartsock/ansible-role-avahi/actions/workflows/ci.yml/badge.svg)](https://github.com/brianhartsock/ansible-role-avahi/actions/workflows/ci.yml)
 
-Ansible role to install and configure [Avahi](https://www.avahi.org). Avahi enables discoverable services in a network, specifically mirroring Apple Bonjour behavior allow Mac's to discover services in a Linux machine.
+Ansible role to install and configure [Avahi](https://www.avahi.org). Avahi enables discoverable services in a network, specifically mirroring Apple Bonjour behavior allow Mac's to discover services on a Linux machine.
 
 Requirements
 ------------
 
-This role has been tested on Ubuntu 20.04 and should work on most modern Debian installations.
+This role has been tested on Ubuntu 20.04, 22.04, 24.04 and should work on most modern Debian installations.
 
 The role will need `sudo` privileges so it should be run with `become: True` or a user with sufficient default privileges to install and configure packages.
 

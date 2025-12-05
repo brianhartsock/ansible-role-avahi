@@ -4,13 +4,13 @@
 #
 #    pip-compile
 #
-ansible==11.1.0
+ansible==12.2.0
     # via -r requirements.in
 ansible-compat==24.10.0
     # via
     #   ansible-lint
     #   molecule
-ansible-core==2.18.1
+ansible-core==2.19.4
     # via
     #   ansible
     #   ansible-compat

@@ -7,7 +7,7 @@ Ansible role to install and configure [Avahi](https://www.avahi.org). Avahi enab
 Requirements
 ------------
 
-This role has been tested on Ubuntu 20.04, 22.04, 24.04 and should work on most modern Debian installations.
+This role has been tested on Ubuntu 22.04, 24.04 and should work on most modern Debian installations.
 
 The role will need `sudo` privileges so it should be run with `become: True` or a user with sufficient default privileges to install and configure packages.
 

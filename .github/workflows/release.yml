@@ -11,13 +11,11 @@ jobs:
       - name: Check out code
         uses: actions/checkout@v3
 
-      - name: Set up Python 3.
-        uses: actions/setup-python@v5
-        with:
-          python-version: '3.x'
+      - name: Set up uv.
+        uses: astral-sh/setup-uv@v5
 
       - name: Install Ansible.
-        run: pip3 install ansible-core
+        run: uv tool install ansible-core
 
       - name: Trigger a new import on Galaxy.
         run: >-

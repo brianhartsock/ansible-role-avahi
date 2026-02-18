@@ -1,2 +1,6 @@
-# Ansible files
+# Ansible
 *.retry
+.ansible/
+
+# uv
+.venv/

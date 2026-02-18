@@ -1,0 +1,15 @@
+[project]
+name = "ansible-role-avahi"
+version = "0.0.0"
+requires-python = ">=3.14"
+
+[dependency-groups]
+dev = [
+  "molecule",
+  "molecule-plugins[docker]",
+  "pytest-testinfra",
+  "ansible",
+  "ansible-lint",
+  "flake8",
+  "pre-commit",
+]

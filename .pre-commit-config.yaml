@@ -4,16 +4,16 @@ repos:
     hooks:
       - id: yaml-lint
         name: Run YAML lint
-        entry: yamllint
+        entry: uv run yamllint
         language: system
         types: [yaml]
       - id: ansible-lint
         name: Ansible Lint
-        entry: ansible-lint
+        entry: uv run ansible-lint
         language: system
         types: [yaml]
       - id: flake8-lint
         name: Run Python lint (Flake8)
-        entry: flake8
+        entry: uv run flake8
         language: system
         types: [python]

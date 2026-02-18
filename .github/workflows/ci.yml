@@ -20,23 +20,20 @@ jobs:
         with:
           path: 'brianhartsock.avahi'
 
-      - name: Set up Python 3.
-        uses: actions/setup-python@v5
-        with:
-          python-version: '3.x'
-          cache: 'pip'
+      - name: Set up uv.
+        uses: astral-sh/setup-uv@v5
 
       - name: Install dependencies.
-        run: pip3 install -r requirements.txt
+        run: uv sync
 
       - name: Ansible lint
-        run: ansible-lint
+        run: uv run ansible-lint
 
       - name: YAML lint
-        run: yamllint .
+        run: uv run yamllint .
 
       - name: Python lint
-        run: flake8
+        run: uv run flake8
 
   molecule:
     name: Molecule
@@ -47,23 +44,20 @@ jobs:
         with:
           path: 'brianhartsock.avahi'
 
-      - name: Set up Python 3.
-        uses: actions/setup-python@v5
-        with:
-          python-version: '3.x'
-          cache: 'pip'
+      - name: Set up uv.
+        uses: astral-sh/setup-uv@v5
 
       - name: Install dependencies.
-        run: pip3 install -r requirements.txt
+        run: uv sync
 
       - name: Run Molecule tests.
-        run: molecule test
+        run: uv run molecule test
         env:
           PY_COLORS: '1'
           ANSIBLE_FORCE_COLOR: '1'
 
       - name: Run Molecule tests (check_mode)
-        run: molecule test -s check_mode
+        run: uv run molecule test -s check_mode
         env:
           PY_COLORS: '1'
           ANSIBLE_FORCE_COLOR: '1'

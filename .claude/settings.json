@@ -1,0 +1,49 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(uv sync *)",
+      "Bash(uv run ansible-lint *)",
+      "Bash(uv run yamllint *)",
+      "Bash(uv run flake8 *)",
+      "Bash(uv run pre-commit run *)",
+      "Bash(uv run molecule list *)",
+      "Bash(uv run molecule check *)",
+      "Bash(uv run molecule syntax *)",
+      "Bash(uv run molecule create *)",
+      "Bash(uv run molecule converge *)",
+      "Bash(uv run molecule idempotence *)",
+      "Bash(uv run molecule verify *)",
+      "Bash(uv run molecule test *)",
+      "Bash(uv run molecule destroy *)",
+      "Bash(uv run molecule prepare *)",
+      "Bash(uv run molecule side-effect *)",
+      "Bash(uv run molecule cleanup *)",
+      "Bash(uv run pytest *)",
+      "Bash(uv lock *)",
+      "Bash(uv python *)",
+      "Bash(uv pip list *)",
+      "Bash(uv pip show *)",
+      "Bash(uv tree *)",
+      "Bash(uv version *)",
+      "WebFetch(domain:docs.ansible.com)",
+      "WebFetch(domain:ansible.readthedocs.io)",
+      "WebFetch(domain:molecule.readthedocs.io)",
+      "WebFetch(domain:yamllint.readthedocs.io)",
+      "WebFetch(domain:flake8.pycqa.org)",
+      "WebFetch(domain:docs.astral.sh)",
+      "WebFetch(domain:galaxy.ansible.com)",
+      "WebFetch(domain:pre-commit.com)",
+      "WebFetch(domain:testinfra.readthedocs.io)",
+      "WebFetch(domain:docs.docker.com)",
+      "WebFetch(domain:jinja.palletsprojects.com)"
+    ],
+    "ask": [
+      "Bash(uv run ansible *)",
+      "Bash(uv run python *)",
+      "Bash(uv run ansible-galaxy *)",
+      "Bash(uv add *)",
+      "Bash(uv remove *)"
+    ],
+    "deny": []
+  }
+}

@@ -4,3 +4,6 @@
 
 # uv
 .venv/
+
+# Claude
+.claude/settings.local.json

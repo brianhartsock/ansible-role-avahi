@@ -2,6 +2,10 @@ def test_avahi_installed(host):
     assert host.package('avahi-daemon').is_installed
 
 
+def test_avahi_utils_installed(host):
+    assert host.package('avahi-utils').is_installed
+
+
 # Ideally we could test is_running but can't because molecule is running in
 # a docker container.
 def test_service_enabled(host):

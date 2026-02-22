@@ -6,3 +6,8 @@ avahi_use_ipv6: 'no'
 avahi_allow_interfaces: "{{ ansible_facts['default_ipv4']['interface'] }}"
 avahi_enable_reflector: 'no'
 avahi_enable_dbus: 'yes'
+
+# Additional packages to install alongside avahi-daemon
+# avahi_additional_packages:
+#   - avahi-utils
+avahi_additional_packages: []

@@ -36,7 +36,7 @@ uv run molecule login                         # shell into test container
 
 ## Architecture
 
-- **defaults/main.yml** — Role variables (services list, network config, IPv6, reflector, dbus)
+- **defaults/main.yml** — Role variables (services list, network config, IPv6, reflector, dbus, additional packages)
 - **vars/Debian.yml** — OS-family-specific variables loaded via `include_vars` with `ansible_os_family`
 - **tasks/main.yml** — Linear task flow: load OS vars → install package → template daemon config → template service files → ensure service running
 - **templates/avahi-daemon.conf.j2** — Daemon configuration (server, publish, reflector, rlimits sections)

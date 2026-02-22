@@ -3,3 +3,5 @@
   hosts: all
   roles:
     - role: brianhartsock.avahi
+      avahi_additional_packages:
+        - avahi-utils

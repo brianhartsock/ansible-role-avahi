@@ -49,6 +49,9 @@ avahi_enable_reflector: 'yes'
 # Support for systems not usingn dbus/systemd
 avahi_enable_dbus: 'yes'
 
+# Additional packages to install alongside avahi-daemon (e.g. avahi-utils for CLI tools)
+avahi_additional_packages: []
+
 ```
 
 Dependencies

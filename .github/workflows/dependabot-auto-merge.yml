@@ -12,6 +12,9 @@ jobs:
     name: Auto-Merge
     runs-on: ubuntu-latest
     if: github.actor == 'dependabot[bot]'
+    env:
+      PR_URL: ${{ github.event.pull_request.html_url }}
+      GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
     steps:
       - name: Fetch Dependabot metadata
         id: metadata
@@ -19,26 +22,10 @@ jobs:
         with:
           github-token: "${{ secrets.GITHUB_TOKEN }}"
 
-      - name: Approve PR
+      - name: Approve and merge eligible updates
         if: >-
           steps.metadata.outputs.update-type == 'version-update:semver-patch'
-          || (
-            steps.metadata.outputs.update-type == 'version-update:semver-minor'
-            && !contains(steps.metadata.outputs.dependency-names, 'cryptography')
-          )
-        run: gh pr review --approve "$PR_URL"
-        env:
-          PR_URL: ${{ github.event.pull_request.html_url }}
-          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-
-      - name: Auto-merge eligible updates
-        if: >-
-          steps.metadata.outputs.update-type == 'version-update:semver-patch'
-          || (
-            steps.metadata.outputs.update-type == 'version-update:semver-minor'
-            && !contains(steps.metadata.outputs.dependency-names, 'cryptography')
-          )
-        run: gh pr merge --auto --squash "$PR_URL"
-        env:
-          PR_URL: ${{ github.event.pull_request.html_url }}
-          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          || steps.metadata.outputs.update-type == 'version-update:semver-minor'
+        run: |
+          gh pr review --approve "$PR_URL"
+          gh pr merge --auto --squash "$PR_URL"
